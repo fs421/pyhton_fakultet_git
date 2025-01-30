@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <br>
+    <h2>Victor nation how we feelin?</h2>
+    <p>Lubisz foty? Kliknij poniżej, aby zobaczyć galerię!</p>
+    
+    <a href="{{ url_for('foty') }}" class="btn btn-primary">Zobacz foty</a>
+
+
+    <form method="post" action="{{ url_for('add') }}">
+
+        <div class="mb-3">
+            <label class="form-label">
+            <br>
+            <h2>Sekcja komentarzy</h2>
+            
+            </label>
+            <input type="text" class="form-control" name="item_text">
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Zamieść komentarz</button>
+
+        <h2>Komentarze</h2>
+        <div style="background-color: #eeeeee; color: #333; padding: 0px;">
+            {% for el in todo_list %}
+            <p>
+                <h5>Anonimowy uzytkownik 🐱‍👤</h5>
+                {{ el.title }} 😎
+            </p>
+            {% endfor %}
+        </div>
+
+        </div>
+
+    </form>
+{% endblock %}
+ 

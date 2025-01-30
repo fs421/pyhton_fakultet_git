@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <h2>Viktor foty!!!</h2>
+    <p><small><sub>(league of legends)</sub></small></p>
+
+    <div>
+        <audio id="myAudio">
+            <source src="{{ url_for('static', filename='/audio/viktor.mp3') }}" type="audio/mpeg">
+            Twoja przeglądarka nie obsługuje elementu audio.
+        </audio>
+        
+        <button class="btn btn-primary" onclick="playAudio()">🤖</button>
+        
+        <script>
+            function playAudio() {
+                let audio = document.getElementById("myAudio").play();
+                audio.volume = 2.0;  // Maksymalna głośność (1.0 to domyślnie max)
+                audio.play();
+            }
+        </script>
+    </div>
+    <h5>^Kliknij^ (audio warning)</h5>
+
+    <div class="row">
+        <div class="col-md-4" style="padding-top: 50px">
+            <img src="{{ url_for('static', filename='images/viktor1.jpg') }}" class="img-fluid rounded" alt="Bardzo zmęczony viktor">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/viktor2.jpg') }}" class="img-fluid rounded" alt="Viktor prawdziwy">
+        </div>    
+        <div class="col-md-4" style="padding-top: 100px">
+            <br>
+            <img src="{{ url_for('static', filename='images/viktor3.jpg') }}" class="img-fluid rounded" alt="kot">
+        </div>
+        
+    </div>
+
+{% endblock %}
